@@ -29,7 +29,7 @@ save(cred, file="twitter authentication.Rdata")
 registerTwitterOAuth(cred)
 
 ## SEARCH LIMIT ON THE BELOW FUNCTION !
-bigdata <- searchTwitter("#BigData", n=100, cainfo="cacert.pem")
+bigdata <- searchTwitter("#BigData", n=100, cainfo="certificate/cacert.pem")
 
 # conversion from list to data frame
 bigdata.df <- do.call(rbind, lapply(bigdata, as.data.frame))
@@ -46,9 +46,10 @@ palette <- brewer.pal(8, "Accent")
 palette <- palette[-(1:2)]
 
 # Create a png and define where it will be saved and named
-> png(filename="plots/wordcloud.png")
+png(filename="plots/wordcloud.png" , width = 400 , height = 400)
 
-# Create a wordcloud and define the words and their frequencies as well as how those word sizes will scale.
-> bb_wordcloud <- wordcloud(bigdata_corpus, colors=palette)
+# Create a wordcloud
+wordcloud(bigdata_corpus, colors=palette)
+
 # dev.off will complete the plot and save the png
-> dev.off()
+dev.off()
