@@ -9,8 +9,9 @@ download.file(url="http://curl.haxx.se/ca/cacert.pem",
               destfile="certificate/cacert.pem")
 
 ## Store the key
-my.key <- "c7ncGijIQC1WkwKxRpcCyVB9G"
-my.secret <- "Dvo4SdopNLXPocTBfFtutdLxxi1LbrwzcazhZxwdiQ0qRDsOJY"
+## The key and secret pin have been blanked out as a security measure
+my.key <- "xxx"
+my.secret <- "xxx"
 
 ## Inititalize Authentication
 cred <- OAuthFactory$new(consumerKey=my.key,
